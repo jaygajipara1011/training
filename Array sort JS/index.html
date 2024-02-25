@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Array Sorting</title>
+    <script>
+        function checkArraySorting(userInput) {
+            // Convert the user input string into an array of numbers
+            let numbers = userInput.split(",").map(Number);
+            // Check if the array is sorted in ascending order
+            if (isAscending(numbers)) {
+                return 1;
+            }
+            // Check if the array is sorted in descending order
+            else if (isDescending(numbers)) {
+                return -1;
+            }
+            // If the array is not sorted
+            else {
+                return 0;
+            }
+        }
+
+        // Function to check if the array is sorted in ascending order
+        function isAscending(arr) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Function to check if the array is sorted in descending order
+        function isDescending(arr) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (arr[i] < arr[i + 1]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Get user input from the console
+        let userInput = prompt("Enter the array separated by commas:");
+        
+        // Print the user input array
+        console.log("User Input Array:", userInput);
+
+        // Call the function with user input and log the result
+        console.log("Result:", checkArraySorting(userInput));
+    </script>
+</head>
+<body>
+</body>
+</html>
