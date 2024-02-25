@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Rotation</title>
+    <script>
+        function rotateLeft(arr) {
+            const firstElement = arr.shift(); // Remove the first element
+            arr.push(firstElement); // Push it to the end
+            return arr;
+        }
+
+        function getInputAndRotate() {
+            const input = document.getElementById("inputArray").value.trim(); // Get input value
+            const arr = input.split(",").map(Number); // Split the input string by commas and convert each part to a number
+            
+            // Rotate the input array twice
+            let rotatedArray = rotateLeft(arr);
+            rotatedArray = rotateLeft(rotatedArray);
+            
+            console.log("First rotation:", rotatedArray.join(", ")); // Log first rotated array to console
+            
+            // Rotate the first rotated array twice
+            let secondRotatedArray = rotateLeft(rotatedArray);
+            secondRotatedArray = rotateLeft(secondRotatedArray);
+            
+            console.log("Second rotation:", secondRotatedArray.join(", ")); // Log second rotated array to console
+        }
+    </script>
+</head>
+<body>
+    <h2>Array Rotation</h2>
+    <form>
+        <label for="inputArray">Enter integers separated by commas:</label><br>
+        <input type="text" id="inputArray" name="inputArray" value="1,2,3"><br>
+        <button type="button" onclick="getInputAndRotate()">Rotate Array</button>
+    </form>
+</body>
+</html>
