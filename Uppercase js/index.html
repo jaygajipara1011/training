@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Uppercase</title>
+    <script>
+        function isUpperCase(str) {
+            return str === str.toUpperCase();
+        }
+
+        // Get user input
+        let userInput = prompt("Enter a string:");
+
+        // Check if the input string is uppercase
+        if (isUpperCase(userInput)) {
+            console.log("The input string is uppercase.");
+        } else {
+            console.log("The input string is not uppercase.");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
