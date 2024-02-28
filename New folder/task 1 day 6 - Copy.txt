@@ -1,0 +1,81 @@
+body{
+    margin : 0%;
+    padding : 0%;
+    box-sizing: border-box;
+}
+body .container{
+    width : 80rem;
+    margin: auto;
+    display : flex;
+    flex-direction: column;
+
+}
+
+body .container .allBoxes{
+    /* width : 80rem; */
+    height : 10rem;
+    border : 1px solid black;
+    margin-top: 3rem;
+    padding : 3% ;
+    display : flex;
+    border : 2px solid blue
+}
+.container .allBoxes .box{
+    width : 10rem;
+    height : 5rem;
+    margin-right: 2rem;
+    padding: 1rem;
+    background-color: yellow;
+    font-size: 1rem;
+}
+.toggleBox{
+    border : 2px solid blue ;
+}
+input{
+    border : 1px solid black;
+    margin: auto;
+    margin: 2rem auto;
+    padding : 10px 1rem ;
+    border-radius: 5px;
+}
+.italic{
+    font-style: italic;
+}
+.red{
+    background-color: red !important;
+    color: green ;
+}
+.blue{
+    background-color: blue !important;
+}
+.green{
+    background-color: green !important;
+}
+.purple{
+    background-color: purple !important;
+}
+.lightblue{
+    background-color: lightblue !important;
+}
+.orange{
+    background-color: orange !important;
+    border-style: dashed !important;
+}
+.divBorder{
+    border: 5px solid lightpink !important;
+}
+.changeColor{
+    color: green  !important;
+}
+hr{
+   width: 100%;
+}
+.p{
+    padding: 2%;
+}
+.paragraphColor{
+    color: blue;
+}
+span{
+    color: red;
+}
