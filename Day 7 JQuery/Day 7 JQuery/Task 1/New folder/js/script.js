@@ -11,7 +11,7 @@ $(document).ready(function () {
       $(".errorName").show().html(`--Please Enter the Username`);
       return false;
     } else if (usernameValue.length < 3) {
-      $(".errorName").show().html(`--length must be minimum 3`);
+      $(".errorName").show().html(`--Length must be minimum 3`);
       return false;
     } else {
       $(".errorName").hide();
@@ -41,6 +41,7 @@ $(document).ready(function () {
     }
   }
 
+
   //!key up event for password
   $("#password").keyup(function () {
     validationPassword();
@@ -56,7 +57,7 @@ $(document).ready(function () {
     } else if (userPassword.length < 8 || userPassword.length > 20) {
       $(".errorPassword")
         .show()
-        .html(`--length of the pasword bitween 8 to 20`);
+        .html(`--Length of the pasword between 8 to 20`);
       return false;
     } else {
       return true;
@@ -75,7 +76,7 @@ $(document).ready(function () {
     let confirmPasswordValue = $("#confirmPassword").val();
     let passwordValue = $("#password").val();
     if (confirmPasswordValue != passwordValue) {
-      $(".errorconfirm").show().html(`--password doesn't match`);
+      $(".errorconfirm").show().html(`--Password doesn't match`);
       return false;
     }else if(confirmPasswordValue == ''){
       $(".errorconfirm").show().html(`--Please enter the confirm passford`);
@@ -222,6 +223,7 @@ $('#rate5').click(function(){
   //!on submit event
   $("#submit").click(function (event) {
     event.preventDefault();
+    
     validationName();
     validationEmail();
     validationPassword();
@@ -232,9 +234,14 @@ $('#rate5').click(function(){
     validationAbout();
     radio();
     checkbox();
+    $('#form')[0].reset();
+    $('.rating')[1].reset();
+    
   });
+  
 });
 
+$()
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function() {
   // Get the submit button element
@@ -265,5 +272,25 @@ document.addEventListener("DOMContentLoaded", function() {
       <p>First Name: ${firstName}</p>
       <p>Last Name: ${lastName}</p>
       <p>Textarea: ${textarea}</p>`;
+  });
+});
+$(document).ready(function() {
+  $('#submit').on('click', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get the selected ratings
+      var designRating = $('.starrate1.checked').length;
+      var informationRating = $('.startRate.checked').length;
+
+      // Display the ratings in the DOM
+      $('.selectData').html('<h3>User Ratings</h3>');
+      $('.selectData').append('<p>Design Rating: ' + designRating + '</p>');
+      $('.selectData').append('<p>Information Rating: ' + informationRating + '</p>');
+  });
+
+  // Add click event listener to star icons for rating
+  $('.ratignStar i').on('click', function() {
+      $(this).addClass('checked').prevAll().addClass('checked');
+      $(this).nextAll().removeClass('checked');
   });
 });
