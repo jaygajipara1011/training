@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8 Task 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body class="body">
+    <div class="container">
+    <h2>Enquiry List</h2>
+    <header>
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" name="search" id="search" placeholder="search">
+        </div>
+        <button class="displayForm">
+            <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+        </button>
+        <div class="pagination">
+            <label for="page">Page size : </label>
+            <input type="number" name="number"  id="number">
+        </div>
+
+    </header>
+    <div class="table-style">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody id="tbody" class="table-danger">
+               
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="form-data">
+        <form action="#">
+            <div class="form-group">
+                <label for="name">Name :</label>
+                <input type="text" name="name" placeholder="name" id="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" name="email" placeholder="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="number">Number :</label>
+                <input type="number" name="number" id="number" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <div class="gender">
+                <label for="gender">Gender :</label>
+                <span>Male </span>
+                <input type="radio" name="gender" value="Male" class="gender" id="male">
+                <span>Female </span>
+                <input type="radio" name="gender" value="Female" class="gender" id="female">
+            </div>
+            </div>
+             <div class="form-group">
+                <label for="city">City :</label>
+                <input type="text" placeholder="city" value="city" id="city">
+            </div>
+            <button type="submit" class="btn" id="submit">SUBMIT
+                  </button>
+        </form>
+    </div>
+</div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="enquiryTable">
+        <!-- Enquiry table will be displayed here -->
+    </div>
+    <div id="pagination">
+        <!-- Pagination buttons will be displayed here -->
+    </div>
+    <button id="addEnquiry">Add Enquiry</button>
+
+    <div id="enquiryFormPopup" style="display: none;">
+        <!-- Enquiry form popup content -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+$(document).ready(function() {
+    // Load initial enquiries
+    loadEnquiries();
+
+    // Pagination click event
+    $(document).on('click', '.pagination-button', function() {
+        const page = $(this).data('page');
+        loadEnquiries(page);
+    });
+
+    // Add enquiry button click event
+    $('#addEnquiry').click(function() {
+        openEnquiryFormPopup();
+    });
+
+    // Function to load enquiries
+    function loadEnquiries(page = 1) {
+        const pageSize = $('#pageSize').val();
+        const searchQuery = $('#searchInput').val();
+
+        $.ajax({
+            url: 'load_enquiries.php',
+            type: 'GET',
+            data: { page: page, pageSize: pageSize, searchQuery: searchQuery },
+            success: function(response) {
+                $('#enquiryTable').html(response);
+                updatePagination();
+            }
+        });
+    }
+
+    // Function to update pagination buttons
+    function updatePagination() {
+        const totalPages = parseInt($('#totalPages').val());
+        const currentPage = parseInt($('#currentPage').val());
+
+        $('#pagination').html('');
+        if (totalPages > 1) {
+            for (let i = 1; i <= totalPages; i++) {
+                $('#pagination').append(`<button class="pagination-button" data-page="${i}">${i}</button>`);
+            }
+        }
+    }
+
+    // Function to open enquiry form popup
+    function openEnquiryFormPopup() {
+        // Logic to open the popup form
+    }
+});
+
+    </script>
+</body>
+</html>
