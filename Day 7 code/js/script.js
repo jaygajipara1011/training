@@ -8,10 +8,10 @@ $(document).ready(function () {
     $(".errorName").hide();
     let usernameValue = $("#username").val();
     if (usernameValue == "") {
-      $(".errorName").show().html(`--Please Enter the Username`);
+      $(".errorName").show().html(`Please Enter the Username`);
       return false;
     } else if (usernameValue.length < 3) {
-      $(".errorName").show().html(`--Length must be minimum 3`);
+      $(".errorName").show().html(`Length must be minimum 3`);
       return false;
     } else {
       $(".errorName").hide();
@@ -29,13 +29,13 @@ $(document).ready(function () {
     let useremailValue = $("#email").val();
     let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
     if (useremailValue == "") {
-      $(".errorEmail").show().html(`--Please Enter the Email`);
+      $(".errorEmail").show().html(`Please Enter the Email`);
       return false;
     } else {
       if (regex.test(useremailValue)) {
         return true;
       } else {
-        $(".errorEmail").show().html(`--Email is Invalid`);
+        $(".errorEmail").show().html(`Email is Invalid`);
         return false;
       }
     }
@@ -52,7 +52,7 @@ $(document).ready(function () {
     let userPassword = $("#password").val();
     $(".errorPassword").hide();
     if (userPassword == "") {
-      $(".errorPassword").show().html(`--Please Enter the password`);
+      $(".errorPassword").show().html(`Please Enter the password`);
       return false;
     } else if (userPassword.length < 8 || userPassword.length > 20) {
       $(".errorPassword")
@@ -76,10 +76,10 @@ $(document).ready(function () {
     let confirmPasswordValue = $("#confirmPassword").val();
     let passwordValue = $("#password").val();
     if (confirmPasswordValue != passwordValue) {
-      $(".errorconfirm").show().html(`--Password doesn't match`);
+      $(".errorconfirm").show().html(`Password doesn't match`);
       return false;
     }else if(confirmPasswordValue == ''){
-      $(".errorconfirm").show().html(`--Please enter the confirm passford`);
+      $(".errorconfirm").show().html(`Please enter the confirm passford`);
     }
   }
   // //!key up event for yourself input
@@ -94,7 +94,7 @@ $(document).ready(function () {
     if (userSelf == "") {
       $(".errorSelfInput")
         .show()
-        .html(`--Please Enter the one line of yourself`);
+        .html(`Please Enter the one line of yourself`);
       return false;
     }
   }
@@ -107,7 +107,7 @@ $(document).ready(function () {
     $(".errorFname").hide();
     let usernameFValue = $("#firstName").val();
     if (usernameFValue == "") {
-      $(".errorFname").show().html(`--Please Enter the first name`);
+      $(".errorFname").show().html(`Please Enter the first name`);
       return false;
     }
     return true;
@@ -121,7 +121,7 @@ $(document).ready(function () {
     $(".errorLname").hide();
     let usernameValue = $("#lastName").val();
     if (usernameValue == "") {
-      $(".errorLname").show().html(`--Please Enter the last name`);
+      $(".errorLname").show().html(`Please Enter the last name`);
       return false;
     }
     return true;
@@ -136,7 +136,7 @@ $(document).ready(function () {
     $(".errorAbout").hide();
     let usernameValue = $("#textarea").val();
     if (usernameValue == "") {
-      $(".errorAbout").show().html(`--Please Enter some line about you`);
+      $(".errorAbout").show().html(`Please Enter some line about you`);
       return false;
     }
     return true;
@@ -148,7 +148,7 @@ function radio(){
     if(radio){
       // $(".errorAbout").show().html(`--Please Enter some line about you`);
     }else{
-      $(".errorRedio").show().html(`--Please select fruits`);
+      $(".errorRedio").show().html(`Please select fruits`);
     }
 }
   
@@ -159,7 +159,7 @@ function radio(){
       if(checkbox){
         // $(".errorAbout").show().html(`--Please Enter some line about you`);
       }else{
-        $(".errorCheckbox").show().html(`--Please select fruits`);
+        $(".errorCheckbox").show().html(`Please select books`);
       }
   }
 
