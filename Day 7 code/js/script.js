@@ -238,59 +238,37 @@ $('#rate5').click(function(){
     $('.rating')[1].reset();
     
   });
+  $('#submit').on('click', function(event) {
+    event.preventDefault(); // Prevent form submission
+  
+    // Get form input values using jQuery
+    var username = $('#username').val();
+    var email = $('#email').val();
+    var password = $('#password').val();
+    var confirmPassword = $('#confirmPassword').val();
+    var yourself = $('#yourself').val();
+    var firstName = $('#firstName').val();
+    var lastName = $('#lastName').val();
+    var textarea = $('#textarea').val();
+  
+    // Display form data in the DOM
+    $('#userData').html(
+        `<p>Username: ${username}</p>
+        <p>Email: ${email}</p>
+        <p>Password: ${password}</p>
+        <p>Confirm Password: ${confirmPassword}</p>
+        <p>Yourself: ${yourself}</p>
+        <p>First Name: ${firstName}</p>
+        <p>Last Name: ${lastName}</p>
+        <p>Textarea: ${textarea}</p>`
+    );
+  });
+  
+  // Event listener for rating stars
+  $('.ratignStar i').on('click', function() {
+    $(this).addClass('checked').prevAll().addClass('checked');
+    $(this).nextAll().removeClass('checked');
+  });
   
 });
 
-$()
-// Wait for the DOM to be fully loaded
-document.addEventListener("DOMContentLoaded", function() {
-  // Get the submit button element
-  var submitButton = document.getElementById("submit");
-
-  // Add an event listener to the submit button
-  submitButton.addEventListener("click", function(event) {
-      // Prevent the default form submission behavior
-      event.preventDefault();
-
-      // Get all the form input elements
-      var username = document.getElementById("username").value;
-      var email = document.getElementById("email").value;
-      var password = document.getElementById("password").value;
-      var confirmPassword = document.getElementById("confirmPassword").value;
-      var yourself = document.getElementById("yourself").value;
-      var firstName = document.getElementById("firstName").value;
-      var lastName = document.getElementById("lastName").value;
-      var textarea = document.getElementById("textarea").value;
-
-      // Print all the form data in the DOM
-      document.getElementById("userData").innerHTML = 
-      `<p>Username: ${username}</p>
-      <p>Email: ${email}</p>
-      <p>Password: ${password}</p>
-      <p>Confirm Password: ${confirmPassword}</p>
-      <p>Yourself: ${yourself}</p>
-      <p>First Name: ${firstName}</p>
-      <p>Last Name: ${lastName}</p>
-      <p>Textarea: ${textarea}</p>`;
-  });
-});
-$(document).ready(function() {
-  $('#submit').on('click', function(event) {
-      event.preventDefault(); // Prevent form submission
-
-      // Get the selected ratings
-      var designRating = $('.starrate1.checked').length;
-      var informationRating = $('.startRate.checked').length;
-
-      // Display the ratings in the DOM
-      $('.selectData').html('<h3>User Ratings</h3>');
-      $('.selectData').append('<p>Design Rating: ' + designRating + '</p>');
-      $('.selectData').append('<p>Information Rating: ' + informationRating + '</p>');
-  });
-
-  // Add click event listener to star icons for rating
-  $('.ratignStar i').on('click', function() {
-      $(this).addClass('checked').prevAll().addClass('checked');
-      $(this).nextAll().removeClass('checked');
-  });
-});
